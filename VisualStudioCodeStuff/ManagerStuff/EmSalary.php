@@ -10,7 +10,9 @@
     <title>EmployeeSalary</title>
 </head>
 <body>
-<table width = "600" border = "1" cellspacing = "1" cellpadding = "1" >
+<div class = "group">
+<h1 class = "title">YOUR EMPLOYEE SALARY</h1>
+<table id = "tab" width = "600" border = "1" cellspacing = "1" cellpadding = "1" >
     <?php
         $servername = "localhost";
         $username = "root";
@@ -33,8 +35,7 @@
             echo"<th>bonus</th>";
             echo"<th>Insurance</th>";
             echo "</tr>";
-        }
-        while($row = mysqli_fetch_assoc($result))
+            while($row = mysqli_fetch_assoc($result))
         {
             echo"<tr>";
             echo"<td>".$row["EmployeeCode"]."</td>";
@@ -45,9 +46,56 @@
             echo"<td>".$row["Insurance"]."</td>";
             echo"<tr>";
         }
+        }
+        
      ?>
     </table>
+    </div>
+    <div class = "group">
+    <h1 class = "title">PAY EMPLOYEE</h1>
+            <form action = "http://localhost/VisualStudioCodeStuff/ManagerStuff/Pay.php" method = "POST">
+                <input class = "input" type = "text" id = "emCode" name = "emCode" placeholder = "EmployeeNumber">
+                <input type = "submit" name = "submit" class = "submit" value = "Pay"> 
+            </form>
+            <form action = "http://localhost/VisualStudioCodeStuff/ManagerStuff/PayInsurance.php" method = "POST">
+                <input class = "input" type = "text" id = "emCode" name = "emCode" placeholder = "EmployeeNumber">
+                <input type = "submit" name = "submit" class = "submit" value = "PayInsurance"> 
+            </form>
+    </div>
+    <style>
+    #tab{
+        align : center;
+        background-color: #05ffb0;
+    }
+    .group{
+        align : left;
+    }
+    .title{
+        color: red;
+        background-color: rgba(50, 115, 220, 0.3);
+    }
+    body{
+    background-image: url(money.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+    form{
+        width: 1000px;
+        margin: auto;
+        margin-top:50px;
+    }
+    .input{
+        width: 60%;
+        padding: 10px;
+        font-size: 20px;
+    }
 
-    
+    .submit{
+        width:15%;
+        padding:10px;
+        font-size:20px;
+        background-color:#1E90FF;
+    }
+    </style>
 </body>
 </html>

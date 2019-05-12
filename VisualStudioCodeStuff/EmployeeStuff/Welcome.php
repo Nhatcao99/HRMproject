@@ -11,6 +11,7 @@
 </head>
 <body>
     <?php 
+        $answer;
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -43,15 +44,29 @@
         $university = $_POST['university'];
         $dateOfBirth = $date."-".$month."-".$year;
 
-        $sql1 = "UPDATE `employee_information`SET `EmployeeCode` = '$employeeCode', `Address` = '$address', `LastName` = '$lastname', `FirstName` = '$firstname', `PhoneNumber` = '$phonenumber',`email` = '$email', 
-        `JobPosition` = '$jobpos', `Gender` = '$gender', `Department` = '$department', 
-        `DateOfBirth` = '$dateOfBirth', `IdentityNumber` = '$identityNumber', `PassportNumber` = '$passportNumber',
-         `Ethnic` = '$ethnic', `Nationality` = '$nal', `Religion` = '$religion', `Marriage` = '$marriage', `Degree` = '$degree', `University/College` = '$university' WHERE `employeeCode` = '$emCode';";
+        $sql1 = "UPDATE `employee_information`SET `EmployeeCode` = COALESCE('$employeeCode',`EmployeeCode`), `Address` = COALESCE('$address',`Address`), `LastName` = COALESCE('$lastname',`LastName`), `FirstName` = COALESCE('$firstname',`FirstName`), `PhoneNumber` = COALESCE('$phonenumber',`PhoneNumber`),`email` = COALESCE('$email',`email`), 
+        `JobPosition` = COALESCE('$jobpos',`JobPosition`), `Gender` = COALESCE('$gender',`Gender`), `Department` = COALESCE('$department',`Department`), 
+        `DateOfBirth` = COALESCE('$dateOfBirth',`DateOfBirth`), `IdentityNumber` = COALESCE('$identityNumber',`IdentityNumber`), `PassportNumber` = COALESCE('$passportNumber',`PassportNumber`),
+         `Ethnic` = COALESCE('$ethnic',`Ethnic`), `Nationality` = COALESCE('$nal',`Nationality`), `Religion` = COALESCE('$religion',`Religion`) , `Marriage` = COALESCE('$marriage',`Marriage`) , `Degree` = COALESCE('$degree',`Degree`), `University/College` = COALESCE('$university',`University/College`) WHERE `employeeCode` = '$emCode';";
             if (mysqli_query($conn, $sql1)) {
-                echo "CHANGE successfully";
+                $answer =  "CHANGE successfully";
             } else {
-                echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
+                $answer = "Error: " . $sql1 . "<br>" . mysqli_error($conn);
             }
     ?>
+    <h1 id = "title"><?php echo $answer ?></h1>
+    <style>
+body{
+        background-image: URL("paper.jpg");
+        background-size: cover; 
+        background-repeat: no-repeat;
+    }
+#title {
+    text-align: center;
+    border: 3px solid green;
+    padding: 70px 0;
+    background-color: rgba(50, 115, 220, 0.3);
+    }   
+</style>
 </body>
 </html>

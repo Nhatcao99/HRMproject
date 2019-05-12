@@ -1,5 +1,6 @@
 <?php 
-    session_start()
+    session_start();
+    $userCode = $_SESSION["userCode"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +16,8 @@
         <ul>
         <li><a href = "http://localhost/VisualStudioCodeStuff/Common/SelfInfo.php">Personal Info</a></li>
         <li><a href = "http://localhost/VisualStudioCodeStuff/Common/PersonelSearch.php">CompanyPersonel</a></li>           
-         <li><a href = "http://localhost/VisualStudioCodeStuff/Common/mySalary.php">Salary And Other Insurance</a></li>
-        <li><a href = "http://localhost/VisualStudioCodeStuff/">Logout</a></li>
+         <li><a href = "http://localhost/VisualStudioCodeStuff/Common/mySalary.php">Salary</a></li>
+         <li><a href = "http://localhost/VisualStudioCodeStuff/logout.php">Logout</a></li>
         </ul>
     </nav>
 </body>

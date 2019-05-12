@@ -27,9 +27,13 @@
         font-size:20px;
         background-color:#1E90FF;
     }
+    .title{
+      background-color: rgba(50, 115, 220, 0.3);
+      color: hsl(14, 100%, 53%);
+    }
 </style>
 <div>
-    <h1>Change User Info</h1>
+    <h1 class = "title">Change User Info</h1>
 <form class="sign-up-htm" action="http://localhost/VisualStudioCodeStuff/EmployeeStuff/Welcome.php" method="POST">
         <div class="group">
           <input id="username" name="username" type="text" class="input" placeholder = "Username">
@@ -44,7 +48,7 @@
           <input id="FirstName" name="FirstName" type="text" class="input" placeholder = "FirstName">
         </div>
         <div class="group">
-          <h3>DateOfBirth</h3>
+          <h3 class = "title">DateOfBirth</h3>
           <table>
           <tr>
           <th><input id="Date" name="Date" type="text" class="input" placeholder = "Date"></th>
@@ -64,7 +68,7 @@
           <input id="JobPos" name="JobPosition" type="text" class="input" placeholder = "JobPosition">
         </div>
         <div class="group">
-          <label for="Gen" class="label">Gender</label>
+          <label for="Gen" class="label"><h3 class = "title">Gender</h3></label>
           <select id = "gender" name="gender">
             <option value = "Other">Other</option>
             <option value = "Male">Male</option>
@@ -91,7 +95,7 @@
         </div>
         <table>
         <th><div class="group">
-        <label for="Rel" class="label">Religion</label>
+        <label for="Rel" class="label"><h3 class = "title">Religion</h3></label>
           <select id = "religion" name="religion">
             <option value = "Other">Other</option>
             <option value = "Christian">Christian</option>
@@ -100,7 +104,7 @@
         </div></th>
         <th>
         <div class="group">
-        <label for="Mag" class="label">Marriage</label>
+        <label for="Mag" class="label"><h3 class = "title">Marriage</h3></label>
           <select id = "marriage" name="marriage">
             <option value = "married">Married</option>
             <option value = "single">Single</option>

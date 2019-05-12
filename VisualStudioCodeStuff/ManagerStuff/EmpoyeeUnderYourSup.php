@@ -11,7 +11,10 @@
     <title>EMPLOYEES UNDER YOUR SUPERVISION</title>
 </head>
 <body>
+<table id = "tab" width = "600" border = "1" cellspacing = "1" cellpadding = "1" >
+
 <?php 
+    $answer = "YOUR COMPANIONS";
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -27,35 +30,70 @@
     `employee_information` Where `ManagerCode` = '$user';";         
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) == 0) {
-        echo "You have no companion";
+        $answer = "You have no companion";
     }
     else if (mysqli_num_rows($result) > 0){
+        echo "<tr>";
+            echo "<th>EmployeeCode</th>";
+            echo "<th>Address</th>";
+            echo "<th>LastName</th>";
+            echo"<th>FirstName</th>";
+            echo"<th>PhoneNumber</th>";
+            echo"<th>Email</th>";
+            echo"<th>Profession</th>";
+            echo"<th>Department</th>";
+            echo"<th>Gender</th>";
+            echo"<th>DateOfBirth</th>";
+            echo"<th>IdentityNumber</th>";
+            echo"<th>PassportNumber</th>";
+            echo"<th>Degree</th>";
+            echo"<th>Degree</th>";
+            echo"<th>Degree</th>";
+            echo"<th>Degree</th>";
+            echo"<th>University<th>";
+            echo "</tr>";
         while($row = mysqli_fetch_assoc($result))
         {
-            echo "<div class = 'article box'>
-            <td>".$row["EmployeeCode"]."</td>
-            <td>".$row["Address"]."</td>
-            <td>".$row["LastName"]."</td>
-            <td>".$row["FirstName"]."</td>
-            <td>".$row["PhoneNumber"]."</td>
-            <td>".$row["email"]."</td>
-            <td>".$row["JobPosition"]."</td>
-            <td>".$row["Department"]."</td>
-            <td>".$row["Gender"]."</td>
-            <td>".$row["Department"]."</td>
-            <td>".$row["DateOfBirth"]."</td>
-            <td>".$row["IdentityNumber"]."</td>
-            <td>".$row["PassportNumber"]."</td>
-            <td>".$row["Ethnic"]."</td>
-            <td>".$row["Nationality"]."</td>
-            <td>".$row["Religion"]."</td>
-            <td>".$row["Marriage"]."</td>
-            <td>".$row["Degree"]."</td>
-            <td>".$row["University/College"]."</td>
-
-            </div>";
+            echo"<tr>";
+            echo"<td>".$row["EmployeeCode"]."</td>";
+            echo"<td>".$row["Address"]."</td>";
+            echo"<td>".$row["LastName"]."</td>";
+            echo"<td>".$row["FirstName"]."</td>";
+            echo"<td>".$row["PhoneNumber"]."</td>";
+            echo"<td>".$row["email"]."</td>";
+            echo"<td>".$row["JobPosition"]."</td>";
+            echo"<td>".$row["Department"]."</td>";
+            echo"<td>".$row["Gender"]."</td>";
+            echo"<td>".$row["DateOfBirth"]."</td>";
+            echo"<td>".$row["IdentityNumber"]."</td>";
+            echo"<td>".$row["PassportNumber"]."</td>";
+            echo"<td>".$row["Ethnic"]."</td>";
+            echo"<td>".$row["Nationality"]."</td>";
+            echo"<td>".$row["Religion"]."</td>";
+            echo"<td>".$row["Marriage"]."</td>";
+            echo"<td>".$row["Degree"]."</td>";
+            echo"<td>".$row["University/College"]."</td>";
+            echo"<tr>";
         }
     }
 ?>
+    <h1 id = "title"><?php echo $answer ?></h1>
+</table>
+<style>
+    body{
+        background-image: URL("paper.jpg");
+        background-size: cover; 
+        background-repeat: no-repeat;
+    }
+    #title {
+    text-align: center;
+    border: 3px solid green;
+    padding: 70px 0;
+    background-color: rgba(50, 115, 220, 0.3);
+    }   
+    #tab{
+        background-color: rgba(50, 115, 220, 0.3);
+    }
+    </style>
 </body>
 </html>

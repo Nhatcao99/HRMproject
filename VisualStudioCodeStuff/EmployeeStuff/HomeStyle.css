@@ -6,6 +6,7 @@
 body{
     background-image: url(EmWork.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 nav{

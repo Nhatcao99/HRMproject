@@ -10,8 +10,7 @@
     <title>Search Result</title>
 </head>
 <body>
-<table width = "600" border = "1" cellspacing = "1" cellpadding = "1" >
-
+<table id = "tab" width = "600" border = "1" cellspacing = "1" cellpadding = "1" >
 <?php
     $servername = "localhost";
     $username = "root";
@@ -36,9 +35,9 @@
     $emDep = mysqli_real_escape_string($conn,$emDep);
     $emNal = mysqli_real_escape_string($conn,$emNal);
     $emSex = mysqli_real_escape_string($conn,$emSex);
-
+    $answer = "RESULT FOUND";
     $result = mysqli_query($conn, "SELECT `EmployeeCode`, `Address`, `LastName`, `FirstName`, `PhoneNumber`, `email`, `JobPosition`, `Gender`, `Department`,`Nationality` FROM `employee_information` Where 
-    `FirstName` Like '%$emFName%' AND `LastName` Like '%$emLName%' AND `JobPosition` Like '%$emPro%' AND `Department` Like '%$emDep%' AND `Nationality` LIKE '%$emNal%' AND `Gender` LIKE '%$emSex%';");
+    UPPER(`FirstName`) Like UPPER('%$emFName%') AND UPPER(`LastName`) Like UPPER('%$emLName%') AND UPPER(`JobPosition`) Like UPPER('%$emPro%') AND UPPER(`Department`) Like UPPER('%$emDep%') AND UPPER(`Nationality`) LIKE UPPER('%$emNal%') AND UPPER(`Gender`) LIKE UPPER('%$emSex%');");
     if (mysqli_num_rows($result) > 0){
         echo "<tr>";
         echo "<th>EmployeeCode</th>";
@@ -68,9 +67,26 @@
         echo"<tr>";
         }
     } else{
-        echo "No Result Found!!!";
+        $answer =  "No Result Found!!!";
     }
  ?>
+    <h1 id = "title"><?php echo $answer ?></h1>
  </table>
+ <style>
+    body{
+        background-image: URL("paper.jpg");
+        background-size: cover; 
+        background-repeat: no-repeat;
+    }
+    #title {
+    text-align: center;
+    border: 3px solid green;
+    padding: 70px 0;
+    background-color: rgba(50, 115, 220, 0.3);
+    }   
+    #tab{
+        background-color: rgba(50, 115, 220, 0.3);
+    }
+    </style>
 </body>
 </html>
