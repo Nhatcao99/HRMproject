@@ -44,11 +44,10 @@
             echo"<th>Department</th>";
             echo"<th>Gender</th>";
             echo"<th>DateOfBirth</th>";
-            echo"<th>IdentityNumber</th>";
-            echo"<th>PassportNumber</th>";
-            echo"<th>Degree</th>";
-            echo"<th>Degree</th>";
-            echo"<th>Degree</th>";
+            echo"<th>Ethnic</th>";
+            echo"<th>Nationality</th>";
+            echo"<th>Religion</th>";
+            echo"<th>Marriage</th>";
             echo"<th>Degree</th>";
             echo"<th>University<th>";
             echo "</tr>";
@@ -65,8 +64,6 @@
             echo"<td>".$row["Department"]."</td>";
             echo"<td>".$row["Gender"]."</td>";
             echo"<td>".$row["DateOfBirth"]."</td>";
-            echo"<td>".$row["IdentityNumber"]."</td>";
-            echo"<td>".$row["PassportNumber"]."</td>";
             echo"<td>".$row["Ethnic"]."</td>";
             echo"<td>".$row["Nationality"]."</td>";
             echo"<td>".$row["Religion"]."</td>";

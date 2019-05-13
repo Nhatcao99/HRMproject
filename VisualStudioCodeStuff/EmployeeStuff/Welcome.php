@@ -22,7 +22,6 @@
         } 
         //echo "Connected successfully";
         $emCode = $_SESSION['userCode'];
-        $username = $_POST['username'];
         $address = $_POST['Address'];
         $lastname = $_POST['LastName'];
         $firstname = $_POST['FirstName'];
@@ -44,7 +43,7 @@
         $university = $_POST['university'];
         $dateOfBirth = $date."-".$month."-".$year;
 
-        $sql1 = "UPDATE `employee_information`SET `EmployeeCode` = COALESCE('$employeeCode',`EmployeeCode`), `Address` = COALESCE('$address',`Address`), `LastName` = COALESCE('$lastname',`LastName`), `FirstName` = COALESCE('$firstname',`FirstName`), `PhoneNumber` = COALESCE('$phonenumber',`PhoneNumber`),`email` = COALESCE('$email',`email`), 
+        $sql1 = "UPDATE `employee_information` SET `EmployeeCode` = COALESCE('$emCode',`EmployeeCode`), `Address` = COALESCE('$address',`Address`), `LastName` = COALESCE('$lastname',`LastName`), `FirstName` = COALESCE('$firstname',`FirstName`), `PhoneNumber` = COALESCE('$phonenumber',`PhoneNumber`),`email` = COALESCE('$email',`email`), 
         `JobPosition` = COALESCE('$jobpos',`JobPosition`), `Gender` = COALESCE('$gender',`Gender`), `Department` = COALESCE('$department',`Department`), 
         `DateOfBirth` = COALESCE('$dateOfBirth',`DateOfBirth`), `IdentityNumber` = COALESCE('$identityNumber',`IdentityNumber`), `PassportNumber` = COALESCE('$passportNumber',`PassportNumber`),
          `Ethnic` = COALESCE('$ethnic',`Ethnic`), `Nationality` = COALESCE('$nal',`Nationality`), `Religion` = COALESCE('$religion',`Religion`) , `Marriage` = COALESCE('$marriage',`Marriage`) , `Degree` = COALESCE('$degree',`Degree`), `University/College` = COALESCE('$university',`University/College`) WHERE `employeeCode` = '$emCode';";

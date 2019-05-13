@@ -37,7 +37,7 @@
     $emSex = mysqli_real_escape_string($conn,$emSex);
     $answer = "RESULT FOUND";
     $result = mysqli_query($conn, "SELECT `EmployeeCode`, `Address`, `LastName`, `FirstName`, `PhoneNumber`, `email`, `JobPosition`, `Gender`, `Department`,`Nationality` FROM `employee_information` Where 
-    UPPER(`FirstName`) Like UPPER('%$emFName%') AND UPPER(`LastName`) Like UPPER('%$emLName%') AND UPPER(`JobPosition`) Like UPPER('%$emPro%') AND UPPER(`Department`) Like UPPER('%$emDep%') AND UPPER(`Nationality`) LIKE UPPER('%$emNal%') AND UPPER(`Gender`) LIKE UPPER('%$emSex%');");
+    `FirstName` Like '$emFName' OR `LastName` Like '$emLName' OR `JobPosition` Like '$emPro' OR `Department` Like '$emDep' OR `Nationality` LIKE '$emNal' OR `Gender` LIKE '$emSex';");
     if (mysqli_num_rows($result) > 0){
         echo "<tr>";
         echo "<th>EmployeeCode</th>";

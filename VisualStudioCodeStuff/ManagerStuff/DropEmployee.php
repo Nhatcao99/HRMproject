@@ -23,7 +23,7 @@
     $manID = $_SESSION["userCode"];
     if (empty($emID)) {$answer = "Please Insert Employee Code";}
     else{
-        $sql0 = "SELECT `EmployeeCode` FROM `employee_information` WHERE `EmployeeCode` = '$emID'";
+        $sql0 = "SELECT `EmployeeCode` FROM `employee_information` WHERE `EmployeeCode` = '$emID' AND `ManagerCode`='$manID'";
         $result = mysqli_query($conn, $sql0);
         if (mysqli_num_rows($result) > 0){
         $sql1 = "UPDATE `employee_information` SET `ManagerCode` = 0  WHERE `ManagerCode`='$manID' AND `employeeCode` = '$emID';";
@@ -31,6 +31,10 @@
     {
         $answer = "THE EMPLOYEE NO LONGER WORK UNDER YOUR SUPERVISION";
         $sql2 = "UPDATE `salary` SET `basic`= 0,`bonus`= 0 ,`Total Net`= 0 WHERE `EmployeeCode` = '$emID'";
+        if($conn -> query($sql2) === TRUE)
+        {
+
+        }
     }else{
         $answer = "There No such employee";
     }}else{

@@ -36,9 +36,6 @@
     <h1 class = "title">Change User Info</h1>
 <form class="sign-up-htm" action="http://localhost/VisualStudioCodeStuff/EmployeeStuff/Welcome.php" method="POST">
         <div class="group">
-          <input id="username" name="username" type="text" class="input" placeholder = "Username">
-        </div>
-        <div class="group">
           <input id="Address" name="Address" type="text" class="input" placeholder = "Address">
         </div>
         <div class="group">
@@ -46,6 +43,12 @@
         </div>
         <div class="group">
           <input id="FirstName" name="FirstName" type="text" class="input" placeholder = "FirstName">
+        </div>
+        <div class="group">
+           <input id="PhoneNumber" name="PhoneNumber" type="text" class="input" placeholder = "PhoneNumber">
+        </div>
+        <div class="group">
+          <input id="email" name="email" type="text" class="input" placeholder = "Email">
         </div>
         <div class="group">
           <h3 class = "title">DateOfBirth</h3>
@@ -62,10 +65,10 @@
           </table>
         </div>
         <div class="group">
-           <input id="PhoneNumber" name="PhoneNumber" type="text" class="input" placeholder = "PhoneNumber">
+          <input id="JobPos" name="JobPosition" type="text" class="input" placeholder = "JobPosition">
         </div>
         <div class="group">
-          <input id="JobPos" name="JobPosition" type="text" class="input" placeholder = "JobPosition">
+          <input id="Department" name="Department" type="text" class="input" placeholder = "Department">
         </div>
         <div class="group">
           <label for="Gen" class="label"><h3 class = "title">Gender</h3></label>
@@ -74,12 +77,6 @@
             <option value = "Male">Male</option>
             <option value = "Female">Female</option>
         </select>
-        </div>
-        <div class="group">
-          <input id="Department" name="Department" type="text" class="input" placeholder = "Department">
-        </div>
-        <div class="group">
-          <input id="email" name="email" type="text" class="input" placeholder = "Email">
         </div>
         <div class="group">
           <input id="IdentityNumber" name="IdentityNumber" type="text" class="input" placeholder = "IdentityNumber">
