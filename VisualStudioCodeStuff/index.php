@@ -24,7 +24,7 @@
         font-size: 20px;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: red;
+  color: blue;
 }
   </style>
   <div class = "login-html">

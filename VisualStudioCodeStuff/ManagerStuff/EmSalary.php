@@ -12,7 +12,7 @@
 <body>
 <div class = "group">
 <h1 class = "title">YOUR EMPLOYEE SALARY</h1>
-<table id = "tab" width = "600" border = "1" cellspacing = "1" cellpadding = "1" >
+<table align = center id = "tab" width = "600" border = "1" cellspacing = "1" cellpadding = "1" >
     <?php
         $servername = "localhost";
         $username = "root";
@@ -65,7 +65,7 @@
     <style>
     #tab{
         align : center;
-        background-color: #05ffb0;
+        background-color: white;
     }
     .group{
         align : left;

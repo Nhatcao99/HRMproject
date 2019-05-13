@@ -10,7 +10,7 @@
 <body>
     <style>
     body{
-        background-image: url("temp.jpg");
+        background-image: url("Employee.jpg");
         background-size: cover;
         background-color: Silver;
         background-repeat: no-repeat;
@@ -25,10 +25,10 @@
         width:10%;
         padding:5px;
         font-size:10px;
-        background-color: #05ffb0;
+        background-color: #4169E1;
     }
     .title{
-        color: Teal;
+        color: #8B0000;
         
     }
     .input{
